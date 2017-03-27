@@ -1,0 +1,16 @@
+<div>
+  <form ng-submit="add(product)">
+    <blockquote>
+      <h3>{{title}}</h3>
+      <p>{{text}}</p>
+    </blockquote>
+    <fieldset class="form-group">
+    <label>title:</label>
+    <input ng-model="new.title">
+    </fieldset>
+    <fieldset class="form-group">
+    <label>text:</label>
+    <textarea ng-model="new.text"></textarea>
+    <input type="submit" value="Submit">
+  </form>
+</div>
