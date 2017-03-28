@@ -34,7 +34,18 @@
        $scope.products = database;
      });
   });
+/*
+  app.controller('detailController', function($scope, $http) {
+     $http.get("connect.php")
+     .then(function (response){
+       $scope.items = response.data;
+       console.log(response.data);
+     },function(response){
+       $scope.items = database;
+     });
+  });
 
+*/
   app.controller('detailController',function($scope, $routeParams, $http){
     $scope.name = 'detailController';
     $scope.params = $routeParams;
@@ -48,10 +59,10 @@
 
     $http.get("detail.php")
     .then(function (response){
-      $scope.products = response.data;
+      $scope.items = response.data;
       console.log(response.data);
     },function(response){
-      $scope.products = database;
+      $scope.items = database;
     });
 
   });

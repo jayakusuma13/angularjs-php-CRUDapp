@@ -6,10 +6,11 @@ $name = 'root';
 $pass = '';
 
 $dbconn = mysqli_connect($dbhost,$name,$pass,$db);
-$get = file_get_contents("php://input");
+/*$get = file_get_contents("php://input");
 $data = json_decode($get);
-$id = $data->id;
-$query = mysqli_query($dbconn,"select * from posts where id = '$id'");
+$id = $data->id;*/
+//$id = $_GET["id"];
+$query = mysqli_query($dbconn,"select * from posts where id='7'");
 $output = "";
 while($post = mysqli_fetch_array($query)){
   if($output != ""){
