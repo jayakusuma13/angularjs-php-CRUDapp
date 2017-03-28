@@ -16,7 +16,8 @@
   		controller: 'storeController'
   	})
   	.when('/detail/:id',{
-  		templateUrl: 'pages/detail.html',
+      templateUrl: function(attrs){
+        return 'detail.php?id=' + attrs.id; },
   		controller: 'detailController'
   	});
   });
@@ -46,17 +47,27 @@
   });
 
 */
+
   app.controller('detailController',function($scope, $routeParams, $http){
     $scope.name = 'detailController';
     $scope.params = $routeParams;
+    var id = $scope.params.id;
 
     $http({method: "post", url: "detail.php",
     data: {
       id: $scope.params.id
     },
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  });
+/*
+    var url = 'http://localhost/appx/detail.php?id='+$scope.params.id;
+    console.log(url);
+    $http.post(url).then(function(msg){
+      console.log('yes');
+    }else{
+      console.log('no');
     });
-
+*/
     $http.get("detail.php")
     .then(function (response){
       $scope.items = response.data;
