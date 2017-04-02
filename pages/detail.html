@@ -1,8 +1,19 @@
 <div>
+  <div id="main" ng-repeat="item in items track by $index">
+    <h1>{{item.title}}</h1>
+    <p>{{item.text}}</p>
+    <button ng-click='edit()'>Edit</button>
+
   <div>
-    <h1>Detail Page for Post No: {{params.id}}</h1>
-    <h1>{{products.title}}</h1>
-    <p>{{products.text}}</p>
-    <p>{{products.id}}</p>
+
+  </div>
+  <div id="edit">
+    <form ng-submit='done(product)'>
+    <input type='text' ng-model='edit.title' ng-init="edit.title = item.title"></br>
+    <input type='text' ng-model='edit.text' ng-init="edit.text = item.text"></br>
+    <input type='submit' value='finish'>
+    </form>
+    <button ng-click='delete()'>Delete</button>
+  </div>
   </div>
 </div>
