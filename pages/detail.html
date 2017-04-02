@@ -1,13 +1,11 @@
 <div>
   <div id="main" ng-repeat="item in items track by $index">
+  <div id="display">
     <h1>{{item.title}}</h1>
     <p>{{item.text}}</p>
-    <button ng-click='edit()'>Edit</button>
-
-  <div>
-
+    <button ng-click='toggle = !toggle'>Edit</button>
   </div>
-  <div id="edit">
+  <div id="edit" ng-hide="toggle">
     <form ng-submit='done(product)'>
     <input type='text' ng-model='edit.title' ng-init="edit.title = item.title"></br>
     <input type='text' ng-model='edit.text' ng-init="edit.text = item.text"></br>

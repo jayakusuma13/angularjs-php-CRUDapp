@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 $dbhost = 'localhost';
-$db = 'app';
+$db = 'data';
 $name = 'root';
 $pass = '';
 /*

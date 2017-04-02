@@ -49,6 +49,8 @@
       $scope.items = database;
     });
 
+    $scope.toggle = false;
+
     //edit function
     $scope.edit = function(){
 
